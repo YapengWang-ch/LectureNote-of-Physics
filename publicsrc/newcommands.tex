@@ -1,0 +1,40 @@
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\renewcommand{\glossaryname}{术语表}
+%%三线表线距控制
+\def\topline{\hline\hline\specialrule{0pt}{3pt}{0pt}}%双线，下间距2pt
+\def\midline{\specialrule{0pt}{3pt}{0pt}\hline\specialrule{0pt}{3pt}{0pt}}%单线，下间距2pt	
+\def\bottomline{\specialrule{0pt}{2pt}{0pt}\hline\hline}%双线，上间距2pt
+%\renewcommand\arraystretch{1.2} %控制表格行距，置于table环境内
+\renewcommand{\abstractname}{摘要}
+\newcommand*{\num}{pi}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{lem}[theorem]{Lemma}
+
+
+\newcommand{\op}[1]{\mathcal{#1}}%算符
+\newcommand{\ket}[1]{\left|#1\right>}
+\newcommand{\bra}[1]{\left<#1\right|}
+\newcommand{\braket}[2]{\left<#1\middle|#2\right>}
+\newcommand{\com}[2]{\left[#1,#2\right]}%对易子
+\newcommand{\anticom}[2]{\left\lbrace#1,#2\right\rbrace}%反对易子
+\newcommand{\expect}[1]{\overline{#1}}%期望，上划线形式
+\newcommand{\expectket}[1]{\left<#1\right>}%算符的期望
+\newcommand{\ampsq}[1]{\left|#1\right|^2}%幅值平方，复数平方
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\quat}{\frac{1}{4}}
+\newcommand{\si}[1]{\,\mathrm{#1}} %单位格式
+\newcommand{\der}{\mathrm{d}}				%导数符号
+\newcommand{\dd}[2]{\frac{\der #1}{\der #2}}
+\newcommand{\ddto}[2]{\frac{\der^2 #1}{\der #2^2}}
+\newcommand{\dx}[1]{\dd{#1}{x}}
+\newcommand{\dt}[1]{\dd{#1}{t}}
+\newcommand{\p}{\partial}				%偏微分符号
+\newcommand{\pp}[2]{\frac{\p #1}{\p #2}}
+\newcommand{\ppto}[2]{\frac{\p^2 #1}{\p #2^2}}
+\newcommand{\px}[1]{\pp{#1}{x}}
+\newcommand{\pt}[1]{\pp{#1}{t}}
+\renewcommand{\d}{\der}
+\newcommand{\degree}{^\circ}
