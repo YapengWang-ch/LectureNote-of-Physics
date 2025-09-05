@@ -40,6 +40,70 @@
     \item 可以构成完备归一化的本征矢量组。
 \end{itemize}
 
+\subsection{Eigenvalues \& Eigenstates}
+对于算符 $\op{A}$，如果存在非零矢量 $\ket{\psi}$ 和标量 $a$，使得
+\begin{equation}
+    \op{A}\ket{\psi} = a\ket{\psi}
+\end{equation}
+则称 $\ket{\psi}$ 为 $\op{A}$ 的本征态，$a$ 为对应的本征值。
+
 在量子力学中，可观测量由厄米算符表示，测量结果为该算符的本征值。
 
 \subsection{measurement}
+测量一个可观测量 $\op{A}$ 时，系统的状态 $\ket{\psi}$ 会坍缩到 $\op{A}$ 的某个本征态 $\ket{a}$，测量结果为对应的本征值 $a$。测量结果 $a$ 出现的概率为
+\begin{equation}
+    P(a) = |\braket{a}{\psi}|^2
+\end{equation}
+
+测量后系统的状态变为 $\ket{a}$。
+
+\subsection{commutation of operators \& uncertainty principle}
+两个算符 $\op{A}$ 和 $\op{B}$ 的对易子定义为
+\begin{equation}
+    \com{\op{A}}{\op{B}} = \op{A}\op{B} - \op{B}\op{A}
+\end{equation}
+如果 $\com{\op{A}}{\op{B}} = 0$，则称 $\op{A}$ 和 $\op{B}$ 对易。对易的算符可以同时具有确定的测量值。
+
+如果 $\com{\op{A}}{\op{B}} \neq 0$，则称 $\op{A}$ 和 $\op{B}$ 不对易。根据不确定性原理，两个不对易的可观测量不能同时具有确定的测量值。具体地，对于两个可观测量 $\op{A}$ 和 $\op{B}$，它们的测量结果的不确定性满足以下关系：
+\begin{equation}
+    \Delta A \Delta B \geq \frac{1}{2} |\expect{\com{\op{A}}{\op{B}}}|
+\end{equation}
+其中 $\Delta A$ 和 $\Delta B$ 分别表示测量结果的标准差，$\expect{\cdot}$ 表示期望值。
+
+\section{Position \& Momentum Operators}
+在一维空间中，位置算符 $\hat{x}$ 和动量算符 $\hat{p}$ 定义如下：
+\begin{equation}
+    \hat{x}\ket{x} = x\ket{x}
+\end{equation}
+\begin{equation}
+    \hat{p}\ket{p} = p\ket{p}
+\end{equation}
+其中 $\ket{x}$ 和 $\ket{p}$ 分别为位置和动量的本征态。
+
+位置本征态和动量本征态满足正交归一化条件：
+\begin{equation}
+    \braket{x'}{x} = \delta(x' - x)
+\end{equation}
+\begin{equation}
+    \braket{p'}{p} = \delta(p' - p)
+\end{equation}
+
+其内积为
+\begin{equation}
+    \braket{x}{p} = \frac{1}{\sqrt{2\pi\hbar}} e^{ipx/\hbar}
+\end{equation}
+
+进而可以得到位置和动量算符的对易关系：
+\begin{equation}
+    \com{\hat{x}}{\hat{p}} = i\hbar
+\end{equation}
+
+\subsection{Representation in Position Space}
+
+\subsection{Representation in Momentum Space}
+
+\subsection{the translation operator}
+平移算符 $\mathscr{T}(a)$ 定义为将位置平移 $a$ 的算符，即
+\begin{equation}
+    \op{T}(a)\ket{x} = \ket{x + a}
+\end{equation}
