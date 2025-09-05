@@ -1,0 +1,45 @@
+\chapter{Fundamental Concepts}
+% \section{Fundamental Postulates of Quantum Mechanics}
+\gls{QM} 有以下几个基本假设：
+% \begin{itemize}
+%     \item 
+% \end{itemize}
+\begin{enumerate}
+    \item 系统的状态由\gls{HilbertSpace}中的矢量描述。
+    \item 可观测量由厄米算符表示，测量结果为该算符的本征值。
+    \item 态矢量的演化由薛定谔方程描述。
+\end{enumerate}
+
+\section{Bra , Ket \& Operators}
+
+在量子力学中，系统的状态由\gls{HilbertSpace}中的矢量表示，通常称为\gls{ket}，记作 $\ket{\psi}$。
+
+\gls{ket}的复共轭称为\gls{bra}，记作 $\bra{\psi}$。
+
+\gls{operator}是作用在\gls{HilbertSpace}上的线性映射，通常用花体字母表示，如 $\op{A}$。算符的作用是将一个\gls{ket}映射到另一个\gls{ket}，即 $\op{A}\ket{\psi} = \ket{\phi}$。
+
+\subsection{Inner Product \& Outer Product}
+\gls{bra}与\gls{ket}可以相乘得到一个复数，称为内积，记作 $\braket{\phi}{\psi}$。 内积满足以下性质：
+\begin{itemize}
+    \item $\braket{\psi}{\psi} \geq 0$，且当且仅当 $\ket{\psi} = 0$ 时取等号。
+    \item $\braket{\phi}{\psi} = \braket{\psi}{\phi}^*$
+    \item $\braket{\phi}{(\alpha\ket{\psi_1} + \beta\ket{\psi_2})} = \alpha\braket{\phi}{\psi_1} + \beta\braket{\phi}{\psi_2}$
+\end{itemize}
+
+\gls{ket}与\gls{bra}相乘得到一个算符，称为外积，记作 $\ket{\psi}\bra{\phi}$。 外积的作用是将 $\ket{\phi}$ 映射到 $\ket{\psi}$，即 $(\ket{\psi}\bra{\phi})\ket{\phi} = \ket{\psi}$。
+
+\subsection{Hermitian Operators}
+算符 $\op{A}$ 的厄密共轭记作 $\op{A}^\dagger$，定义为满足以下关系的算符：
+\begin{equation}
+    \braket{\phi}{\op{A}\psi} = \braket{\op{A}^\dagger\phi}{\psi}
+\end{equation}
+如果 $\op{A} = \op{A}^\dagger$，则称 $\op{A}$ 为厄米算符。厄米算符具有以下性质：
+\begin{itemize}
+    \item 本征值为实数。
+    \item 不同本征值对应的本征矢量正交。
+    \item 可以构成完备归一化的本征矢量组。
+\end{itemize}
+
+在量子力学中，可观测量由厄米算符表示，测量结果为该算符的本征值。
+
+\subsection{measurement}
