@@ -4,12 +4,72 @@
 \begin{equation}
     i\hbar \frac{\partial}{\partial t} \ket{\psi(t)} = \op{H} \ket{\psi(t)}
 \end{equation}
-其中 $\op{H}$ 是系统的哈密顿算符。
+其中 $\op{H}$ 是系统的哈密顿算符:
+\begin{equation}
+    \op{H}=-\frac{\op{P}^2}{2m}+V(x)
+\end{equation}
 
 \section{Schrodinger Picture and Heisenberg Picture}
+对于量子系统的演化，有两种不同的视角，分别称为\gls{SPicture}和\gls{HPicture}。
+
+在薛定谔绘景中，物理量代表的算符是不变的，量子态随时间变化。而在海森堡绘景中，量子态是不变的，物理量代表的算符随时间变化。这两种不同的绘景在物理意义上是等价的。
 \section{partile in one-dimensional potential}
+任何物理态都可以视为若干个本征态的线性叠加，在这里我们取能量本征态作为基矢。
+
+对于稳定一维势场中的能量本征态$\ket{E_i}$，
+\begin{equation}
+    \op{U}(t)\ket{E_i}=\exp\left(-\frac{i\op{H}t}{\hbar}\right)\ket{E_i}=\exp\left(-\frac{iE_it}{\hbar}\right)\ket{E_i}.
+\end{equation}
+因此有
+\begin{equation}
+    \bra{x}\op{U}(t)\ket{E_i}=\exp\left(-\frac{iE_it}{\hbar}\right)\braket{x}{E_i}.
+\end{equation}
+可以在坐标表象进行定态求解。
+
+$\forall \ket{x}, $有
+\begin{equation}
+    \bra{x}\op{H}\ket{E_i}=E_i\braket{x}{E_i}
+\end{equation}
+\begin{equation}
+    \left[-\frac{\hbar^2}{2m}+\ddto{}{x}+V(x)\right]\braket{x}{E_i}=E_i\braket{x}{E_i}
+\end{equation}
+自然地,其边界条件为：
+\begin{enumerate}
+    \item 对于$V(x)\neq \infty$的情形，$\frac{\hbar^2}{2m}\braket{x}{E_i}$存在且有限；
+    \item 对于$V(x)=\pm\infty$的情形，$\frac{\hbar^2}{2m}\braket{x}{E_i}=\mp\infty$.
+\end{enumerate}
 \subsection{free particle}
+对于自由粒子，其哈密顿量为
+\begin{equation}
+    \op{H}=\frac{\op{P}^2}{2m}
+\end{equation}
+显然，其动量本征态就是能量本征态，为$\ket{p}$, 在位置表象下为
+\begin{equation}
+    \psi(x,p)=\braket{x}{p}=\frac{1}{\sqrt{2\pi\hbar}} e^{ipx/\hbar}
+\end{equation}
 \subsection{infinite-deep potential well}
+对于一维的有限深方势阱$V(x)$:
+\begin{equation}
+    V(x)=\left\lbrace\begin{aligned}
+        &=-V_0, && x\in[0,a];\\
+        &=0, && x <0 \ \mathtt{or}\  x>a.
+    \end{aligned}\right.
+\end{equation}
+记$\braket{x}{E_i}=\psi(x)$分为三段，
+\begin{equation}
+    \psi(x)=\left\lbrace\begin{aligned}
+        &\psi_1(x),&&x<0;\\
+        &\psi_2(x),&&0\leq x\leq a;\\
+        &\psi_3(x),&&x>a.
+    \end{aligned}\right.
+\end{equation}
+其边界条件为: 
+\begin{align}
+    \psi_1(0)&=\psi_2(0)\\
+    \psi_2(a)&=\psi_3(a)\\
+    \psi_1'(0)&=\psi_2'(0)\\
+    \psi_2'(a)&=\psi_3'(a)
+\end{align}
 \subsection{finite potential well}
 \subsection{potential barrier \& tunneling effect}
 \subsection{delta potential well \& barrier}
