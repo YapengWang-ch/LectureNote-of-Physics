@@ -31,7 +31,7 @@ $\forall \ket{x}, $有
     \bra{x}\op{H}\ket{E_i}=E_i\braket{x}{E_i}
 \end{equation}
 \begin{equation}
-    \left[-\frac{\hbar^2}{2m}+\ddto{}{x}+V(x)\right]\braket{x}{E_i}=E_i\braket{x}{E_i}
+    \left[-\frac{\hbar^2}{2m}\ddto{}{x}+V(x)\right]\braket{x}{E_i}=E_i\braket{x}{E_i}
 \end{equation}
 自然地,其边界条件为：
 \begin{enumerate}
@@ -73,7 +73,77 @@ $\forall \ket{x}, $有
 \subsection{finite potential well}
 \subsection{potential barrier \& tunneling effect}
 \subsection{delta potential well \& barrier}
-\section{harmonic oscillator}
+对于$\delta$势阱
+\begin{equation}
+    V(x)=-V_0\delta(x),
+\end{equation}
+波函数分为束缚态$E\le 0$和散射态$E>0$.
+
+\paragraph{散射态} 对于从左侧入射的波函数：
+\begin{align}
+    \psi_1(x)&=\exp\left(i\frac{px}{\hbar}\right)+R\exp\left(-i\frac{px}{\hbar}\right),x<0;\\
+    \psi_2(x)&=T\exp\left(i\frac{px}{\hbar}\right),  x>0.
+\end{align}
+在$x=0$处进行势函数积分：
+\begin{equation}
+    \int_{-\varepsilon}^{+\varepsilon}\left[-\frac{\hbar^2}{2m}\psi''(x)+V(x)\psi(x)-E\psi(x)\right]\d x=0.
+\end{equation}
+积分得：
+\begin{equation}
+    -\frac{\hbar^2}{2m}(\psi'(x)|_{0^+}-\psi'(x)|_{0^-})-V_0\psi(0)=0.
+    \label{delta_boundary}
+\end{equation}
+结合边界条件$\psi(0)|_{0^+}=\psi(0)|_{0^-}$,可以解得：
+\begin{equation}
+    T=\frac{1}{1+\beta}, R=\frac{-\beta}{1+\beta}, \beta=\frac{mV_0}{ip\hbar}.
+\end{equation}
+
+\paragraph{束缚态} 双边波函数为指数形式，边界条件同式\ref{delta_boundary}.有唯一解：
+\begin{equation}
+    E=-\frac{V_0^2}{2m\hbar^2}.
+\end{equation}
+
+\paragraph{$\delta$势垒}与之相似，$\delta$势垒仅有散射态，其解为：
+\begin{equation}
+    T=\frac{1}{1-\beta}, R=\frac{\beta}{1-\beta}, \beta=\frac{mV_0}{ip\hbar}.
+\end{equation}
+\section{Simple Harmonic Oscillator}
+对于一维简谐势场
+\begin{equation}
+    V(x)=\frac{1}{2}m\omega^2x^2.
+\end{equation}
+\subsection{the solution in position}
+在坐标表象中，定态薛定谔方程为：
+\begin{equation}
+    -\frac{\hbar^2}{2m}\ddto{\psi}{x}+\frac{1}{2}m\omega^2x^2\psi=E\psi.
+\end{equation}
+引入无量纲量$\xi=\sqrt{\frac{m\omega}{\hbar}}x=\alpha x$,将方程简化为:
+\begin{equation}
+    \ddto{\psi}{\xi}+(\lambda-\xi^2)\psi=0, \quad \lambda=\frac{2E}{\hbar\omega}.
+\end{equation}
+
+尝试渐进求解，当$\xi\to\infty$时，忽略$\lambda$, 方程为：
+\begin{equation}
+    \ddto{\psi}{\xi}=\xi^2\psi.
+\end{equation}
+其解$\psi\sim e^{\pm\xi^2/2}$.
+
+因此，将原方程的解$\psi$写成$\psi=H(\xi)e^{-\frac{\xi^2}{2}}$,其中$H(\xi)$可通过多项式法进行求解。
+
+将$H(x)$带入可以得到：
+\begin{equation}
+    \ddto{H}{\xi}-2\xi\dd{H}{\xi}+(\lambda-1)H=0.
+\end{equation}
+这个方法得到的解称为厄米多项式(详见附录),其存在收敛解的条件为
+\begin{equation}
+    \lambda=2n+1, \quad n=0,1,2,3,\cdots.
+\end{equation}
+
+带入原方程可得波函数的本征值为：
+\begin{equation}
+    E_n=\left(n+\frac{1}{2}\right)\hbar\omega,\ n=0,1,2,3,\cdots. 
+\end{equation}
+
 \section{central field}
 对于中心力场$V(\vec{x})=V(r)$,其定态薛定谔方程可写为：
 \begin{equation}
