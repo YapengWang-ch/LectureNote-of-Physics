@@ -15,9 +15,11 @@
 % \usepackage{hyperref}%调整标注与引用
 \usepackage{indentfirst}%首行缩进}
 \usepackage{tikz}%tikz绘图
+\usetikzlibrary{calc}
 \usepackage{listings}%代码插入
 % \lstset{language=Matlab}
 \usepackage{xcolor}
+\usepackage{tcolorbox} % 用于创建自定义文本框
 \usepackage[nottoc]{tocbibind} %目录中显示index,ref,glossary 等
 \usepackage{longtable}%大型表格跨页显示
 \usepackage{booktabs}
@@ -40,7 +42,6 @@
 
 \usepackage{todonotes}
 \input{../../publicsrc/newcommands.tex}%自定义命令
-
 
 \begin{document}
 \title{Quantum Mechanics}

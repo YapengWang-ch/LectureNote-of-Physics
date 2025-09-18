@@ -100,7 +100,7 @@ $\forall \ket{x}, $有
 
 \paragraph{束缚态} 双边波函数为指数形式，边界条件同式\ref{delta_boundary}.有唯一解：
 \begin{equation}
-    E=-\frac{V_0^2}{2m\hbar^2}.
+    E=-\frac{mV_0^2}{2\hbar^2}.
 \end{equation}
 
 \paragraph{$\delta$势垒}与之相似，$\delta$势垒仅有散射态，其解为：
@@ -112,7 +112,7 @@ $\forall \ket{x}, $有
 \begin{equation}
     V(x)=\frac{1}{2}m\omega^2x^2.
 \end{equation}
-\subsection{the solution in position}
+\subsection{the solution in position presentation}
 在坐标表象中，定态薛定谔方程为：
 \begin{equation}
     -\frac{\hbar^2}{2m}\ddto{\psi}{x}+\frac{1}{2}m\omega^2x^2\psi=E\psi.
@@ -134,7 +134,7 @@ $\forall \ket{x}, $有
 \begin{equation}
     \ddto{H}{\xi}-2\xi\dd{H}{\xi}+(\lambda-1)H=0.
 \end{equation}
-这个方法得到的解称为厄米多项式(详见附录),其存在收敛解的条件为
+这个方法得到的解称为厄米多项式(详见附录\ref{Hermition_Polynomial}),其存在收敛解的条件为
 \begin{equation}
     \lambda=2n+1, \quad n=0,1,2,3,\cdots.
 \end{equation}
@@ -143,6 +143,65 @@ $\forall \ket{x}, $有
 \begin{equation}
     E_n=\left(n+\frac{1}{2}\right)\hbar\omega,\ n=0,1,2,3,\cdots. 
 \end{equation}
+
+\subsection{solution in quantum number presentation}
+
+简谐势场的薛定谔方程还可以写成以下形式：
+\begin{equation}
+    \frac{1}{2m}\left(\op{p}^2+m^2\omega^2\op{x}^2\right)\psi=E\psi
+\end{equation}
+参考平方差公式，可以定义算符：
+\begin{equation}
+    a_{\pm}\equiv \frac{1}{\sqrt{2\hbar m\omega}}\left(\mp i\op{p}+m\omega \op{x}\right).
+\end{equation}
+
+但是$\op{x}$与$\op{p}$并不对易，$a_{\pm}$同样不对易，不能简单套用平方差公式，需要进行检验：
+\begin{equation}
+    \begin{aligned}
+        a_-a_+&=\frac{1}{2\hbar m\omega}\left[\op{p}^2+\left(m\omega\op{x}\right)^2-im\omega\com{\op{x}}{\op{p}}\right]\\
+        &=\frac{1}{\hbar\omega}\op{H}+\frac{1}{2}.
+    \end{aligned}
+\end{equation}
+同理，有：
+\begin{equation}
+    a_+a_-=\frac{1}{\hbar\omega}\op{H}-\frac{1}{2}.
+\end{equation}
+\begin{equation}
+    \op{H}=\hbar\omega\left(a_+a_-+\frac{1}{2}\right).
+\end{equation}
+可以得到这一对算符的对易关系：
+\begin{equation}
+    \com{a_-}{a_+}=1.
+\end{equation}
+
+容易证明，对于哈密顿量$\op{H}$的本征态$\psi$，$a_+\psi$也是$\op{H}$的本征态：
+\begin{graybox}[Proof]
+对于$\op{H}$和$a_+$:
+\begin{equation}
+    \begin{aligned}
+        \com{\op{H}}{a_+}&=\hbar\omega\left(a_+a_-+\frac{1}{2}\right)a_+-a_+\hbar\omega\left(a_+a_-+\frac{1}{2}\right)\\
+        &=\hbar\omega\left(a_+a_-a_+-a_+a_+a_-\right)\\
+        &=\hbar\omega a_+\com{a_-}{a_+}\\
+        &=\hbar\omega a_+.
+    \end{aligned}
+\end{equation}
+同理
+\begin{equation}
+    \com{\op{H}}{a_-}=\hbar\omega a_-.
+\end{equation}
+那么对于$\op{H}$的本征态$\psi$:
+\begin{equation}
+    \op{H}\psi=E\psi.
+\end{equation}
+有 
+\begin{equation}
+    \op{H}a_+\psi=(E+\hbar\omega)a_+\psi.
+\end{equation}
+\begin{equation}
+    \op{H}a_-\psi=(E-\hbar\omega)a_-\psi.
+\end{equation}
+\end{graybox}
+
 
 \section{central field}
 对于中心力场$V(\vec{x})=V(r)$,其定态薛定谔方程可写为：

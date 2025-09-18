@@ -13,8 +13,7 @@
 \newtheorem{definition}{Definition}[chapter]
 \newtheorem{lem}[theorem]{Lemma}
 
-
-\newcommand{\op}[1]{\mathcal{#1}}%算符
+\newcommand{\op}[1]{\hat{#1}}%算符
 \newcommand{\ket}[1]{\left|#1\right>}
 \newcommand{\bra}[1]{\left<#1\right|}
 \newcommand{\braket}[2]{\left<#1\middle|#2\right>}
@@ -38,3 +37,33 @@
 \newcommand{\pt}[1]{\pp{#1}{t}}
 \renewcommand{\d}{\der}
 \newcommand{\degree}{^\circ}
+
+\tcbuselibrary{skins, breakable}
+\definecolor{DarkGray}{RGB}{70,70,70}
+\definecolor{LightGray}{RGB}{240,240,240}
+\newtcolorbox{darkgraybox}[1][]{
+    enhanced, % 使用 enhanced 引擎 :cite[10]
+    fontupper=\large,
+    colback=DarkGray,
+    colframe=DarkGray,
+    halign=center,
+    sharp corners=south,
+    coltext=white,
+    #1 % 允许额外选项
+}
+\newtcolorbox{lightgraybox}[1][]{
+    enhanced, % 使用 enhanced 引擎 :cite[10]
+    breakable,
+    fontupper=\normalsize,
+    colback=LightGray,
+    colframe=DarkGray,
+    sharp corners=north,
+    #1 % 允许额外选项
+}
+\newenvironment{graybox}[1][Notation]{
+    \newlength{\mytextlength}
+    \settowidth{\mytextlength}{#1}
+    \begin{darkgraybox}[width=1.25\mytextlength+3em,after skip=0pt]#1\end{darkgraybox}
+    % \vspace*{-3em}
+    \begin{lightgraybox}[before skip=0pt]
+}{\end{lightgraybox}}
