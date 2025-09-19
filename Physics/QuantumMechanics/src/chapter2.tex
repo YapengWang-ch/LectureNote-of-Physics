@@ -202,6 +202,25 @@ $\forall \ket{x}, $有
 \end{equation}
 \end{graybox}
 
+但是谐振子的能量不可能为无限低，因此存在一个能量的下界使得：
+\begin{equation}
+    a_-\psi_0=0.
+\end{equation}
+将方程展开为：
+\begin{equation}
+    \begin{aligned}
+        \frac{1}{\sqrt{2\hbar m\omega}}\left(i\op{p}+m\omega \op{x}\right)\psi_0&=0\\
+        (-\hbar\pp{}{x}+m\omega x)\psi_0(x)&=0.
+    \end{aligned}
+\end{equation}
+可以解得：
+\begin{equation}
+    \psi_0(x)=A\exp\left(-\frac{m\omega x^2}{2\hbar}\right)
+\end{equation}
+归一化为：
+\begin{equation}
+    \psi_0(x)=\sqrt{\frac{m\omega}{2\pi\hbar}}\exp\left(-\frac{m\omega x^2}{2\hbar}\right).
+\end{equation}
 
 \section{central field}
 对于中心力场$V(\vec{x})=V(r)$,其定态薛定谔方程可写为：
