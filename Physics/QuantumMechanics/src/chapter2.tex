@@ -192,32 +192,34 @@ $\forall \ket{x}, $有
 \end{equation}
 
 容易证明，对于哈密顿量$\op{H}$的本征态$\psi$，$a_+\psi$也是$\op{H}$的本征态：
+
 \begin{graybox}[Proof]
-对于$\op{H}$和$a_+$:
-\begin{equation}
-    \begin{aligned}
-        \com{\op{H}}{a_+}&=\hbar\omega\left(a_+a_-+\frac{1}{2}\right)a_+-a_+\hbar\omega\left(a_+a_-+\frac{1}{2}\right)\\
-        &=\hbar\omega\left(a_+a_-a_+-a_+a_+a_-\right)\\
-        &=\hbar\omega a_+\com{a_-}{a_+}\\
-        &=\hbar\omega a_+.
-    \end{aligned}
-\end{equation}
-同理
-\begin{equation}
-    \com{\op{H}}{a_-}=\hbar\omega a_-.
-\end{equation}
-那么对于$\op{H}$的本征态$\psi$:
-\begin{equation}
-    \op{H}\psi=E\psi.
-\end{equation}
-有 
-\begin{equation}
-    \op{H}a_+\psi=(E+\hbar\omega)a_+\psi.
-\end{equation}
-\begin{equation}
-    \op{H}a_-\psi=(E-\hbar\omega)a_-\psi.
-\end{equation}
+    对于$\op{H}$和$a_+$:
+    \begin{equation}
+        \begin{aligned}
+            \com{\op{H}}{a_+}&=\hbar\omega\left(a_+a_-+\frac{1}{2}\right)a_+-a_+\hbar\omega\left(a_+a_-+\frac{1}{2}\right)\\
+            &=\hbar\omega\left(a_+a_-a_+-a_+a_+a_-\right)\\
+            &=\hbar\omega a_+\com{a_-}{a_+}\\
+            &=\hbar\omega a_+.
+        \end{aligned}
+    \end{equation}
+    同理
+    \begin{equation}
+        \com{\op{H}}{a_-}=\hbar\omega a_-.
+    \end{equation}
+    那么对于$\op{H}$的本征态$\psi$:
+    \begin{equation}
+        \op{H}\psi=E\psi.
+    \end{equation}
+    有 
+    \begin{equation}
+        \op{H}a_+\psi=(E+\hbar\omega)a_+\psi.
+    \end{equation}
+    \begin{equation}
+        \op{H}a_-\psi=(E-\hbar\omega)a_-\psi.
+    \end{equation}
 \end{graybox}
+
 
 但是谐振子的能量不可能为无限低，因此存在一个能量的下界使得：
 \begin{equation}
