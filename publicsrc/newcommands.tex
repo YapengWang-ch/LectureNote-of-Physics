@@ -1,3 +1,4 @@
+\usepackage{needspace}
 \renewcommand{\figurename}{图}
 \renewcommand{\tablename}{表}
 \renewcommand{\glossaryname}{术语表}
@@ -66,7 +67,10 @@
 \newlength{\DarkGrayWidth}
 \newenvironment{graybox}[1][Notation]{
     \settowidth{\DarkGrayWidth}{#1}
+    % \needspace{3\baselineskip}
     \begin{darkgraybox}[width=1.25\DarkGrayWidth+3em,after skip=0pt]#1\end{darkgraybox}
     % \vspace*{-3em}
+    % \nopagebreak
+    % \vspace*{-0.1em}
     \begin{lightgraybox}[before skip=0pt]
 }{\end{lightgraybox}}
