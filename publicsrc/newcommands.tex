@@ -38,6 +38,9 @@
 \renewcommand{\d}{\der}
 \newcommand{\degree}{^\circ}
 
+\renewcommand{\max}{\text{max}}
+\renewcommand{\min}{\text{min}}
+
 \tcbuselibrary{skins, breakable}
 \definecolor{DarkGray}{RGB}{70,70,70}
 \definecolor{LightGray}{RGB}{240,240,240}
@@ -60,10 +63,10 @@
     sharp corners=north,
     #1 % 允许额外选项
 }
+\newlength{\DarkGrayWidth}
 \newenvironment{graybox}[1][Notation]{
-    \newlength{\mytextlength}
-    \settowidth{\mytextlength}{#1}
-    \begin{darkgraybox}[width=1.25\mytextlength+3em,after skip=0pt]#1\end{darkgraybox}
+    \settowidth{\DarkGrayWidth}{#1}
+    \begin{darkgraybox}[width=1.25\DarkGrayWidth+3em,after skip=0pt]#1\end{darkgraybox}
     % \vspace*{-3em}
     \begin{lightgraybox}[before skip=0pt]
 }{\end{lightgraybox}}
