@@ -47,7 +47,7 @@ $\forall \ket{x}, $有
 \begin{equation}
     \psi(x,p)=\braket{x}{p}=\frac{1}{\sqrt{2\pi\hbar}} e^{ipx/\hbar}
 \end{equation}
-\subsection{infinite-deep potential well}
+\subsection{finite-deep potential well}
 对于一维的有限深方势阱$V(x)$:
 \begin{equation}
     V(x)=\left\lbrace\begin{aligned}
@@ -70,7 +70,24 @@ $\forall \ket{x}, $有
     \psi_1'(0)&=\psi_2'(0)\\
     \psi_2'(a)&=\psi_3'(a)
 \end{align}
-\subsection{finite potential well}
+\subsection{infinite potential well}
+对于无限深势阱：
+\begin{equation}
+    V(x)=\left\lbrace
+    \begin{aligned}
+        &0, \quad && x\in(0,a);\\
+        &+\infty, \quad && \text{otherwise.}
+    \end{aligned}\right.
+\end{equation}
+显然，其势阱外的波函数总为0，势阱内的解为正弦函数:
+\begin{equation}
+    \psi(x)=A\sin(\omega x+\varphi), \omega=\sqrt{\frac{2mE}{\hbar^2}}.
+\end{equation}
+根据边界条件$\psi(0)=\psi(a)=0$可以得到$\varphi=0, \omega x=n\pi$.
+归一化得到本征态波函数与对应的能量本征态为：
+\begin{equation}
+    \psi_n(x)=\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi x}{a}\right), \quad E_n=\frac{n^2\pi^2\hbar^2}{2ma^2}.
+\end{equation}
 \subsection{potential barrier \& tunneling effect}
 \subsection{delta potential well \& barrier}
 对于$\delta$势阱
@@ -247,7 +264,7 @@ $\forall \ket{x}, $有
 径向部分需要根据势能函数进行求解。
 
 \subsection{Coulomb Field of Hydrogen Atom}
-\section{Hamination with time term}
+\section{Hamiltonian with time term}
 \newpage 
 \section*{Problems}
 \begin{enumerate}
