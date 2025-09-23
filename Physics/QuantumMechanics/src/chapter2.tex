@@ -13,6 +13,42 @@
 对于量子系统的演化，有两种不同的视角，分别称为\gls{SPicture}和\gls{HPicture}。
 
 在薛定谔绘景中，物理量代表的算符是不变的，量子态随时间变化。而在海森堡绘景中，量子态是不变的，物理量代表的算符随时间变化。这两种不同的绘景在物理意义上是等价的。
+
+\section{Efrenfest Theorem}
+量子系统随时间的演化服从薛定谔方程，进而可以推导出物理量$F$对应的演化规律：
+\begin{graybox}
+    某量子系统哈密顿量$\op{H}$不显含时间, 力学量$F$对应的算符为$\op{F}$.对于量子态$\ket{\psi,t}$,力学量$\op{F}$的均值为：
+    \begin{equation}
+        \left<F\right>=\bra{\psi,t}\op{F}\ket{\psi,t}.
+    \end{equation}
+    那么再薛定谔绘景中，其均值对时间的微分为：
+    \begin{equation}
+        \begin{aligned}
+            \dd{}{t}\left[\bra{\psi,t}\op{F}\ket{\psi,t}\right]&=\dd{\bra{\psi,t}}{t}\op{F}\ket{\psi,t}+\bra{\psi,t}\op{F}\dd{\ket{\psi,t}}{t}\\
+            &=\bra{\psi,t}\left[\frac{i\op{H}}{\hbar}\op{F}-\op{F}\frac{i\op{H}}{\hbar}\right]\ket{\psi,t}\\
+            &=\frac{1}{i\hbar}\bra{\psi,t}\com{\op{F}}{\op{H}}\ket{\psi,t}.
+        \end{aligned}
+    \end{equation}
+
+    即
+    \begin{equation}
+        \dd{\expectket{F}}{t}=\frac{1}{i\hbar}\expectket{\com{\op{F}}{\op{H}}}.
+    \end{equation}
+\end{graybox}
+
+对于自由粒子的哈密顿量$\op{H}=\frac{\op{P}^2}{2m}$，计算各个算符与哈密顿量的对易可以得到:
+\begin{align}
+    \com{\op{P}}{\op{H}}&=0.\\
+    \com{\op{x}}{\op{H}}&=\frac{i\hbar}{m}\op{P}.\\
+    \com{\op{x}^2}{\op{H}}&=\frac{i\hbar}{m}\anticom{\op{x}}{\op{P}}.
+\end{align}
+因此可以得到：
+\begin{equation}
+    \dd{\expect{x}}{t}=\frac{\expect{p}}{m}
+\end{equation}
+\begin{equation}
+    \ddto{}{t}\left(\expect{x^2}\right)=\frac{2\expect{p^2}}{m^2}.
+\end{equation}
 \section{partile in one-dimensional potential}
 任何物理态都可以视为若干个本征态的线性叠加，在这里我们取能量本征态作为基矢。
 
