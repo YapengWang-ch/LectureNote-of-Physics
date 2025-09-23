@@ -1,1 +1,81 @@
 \chapter{Perturbation Theory}
+在量子体系中，薛定谔方程并非总是有解析解的，实际上大部分情况下只有数值解。处理无解析解的量子体系，通常有两种方法：其中在哪个一种方法为路径积分，此处暂且不提，更常用的是微扰论的方法.
+
+在微扰论方法中，可以将系统的哈密顿量是为一个有解析解的哈密顿量加上微扰的形式：
+\begin{equation}
+    \op{H}=\op{H}_0+\op{H}'
+\end{equation}
+通过逐阶近似进行求解，对于$\expectket{\op{H}'}\ll\expectket{\op{H}_0}$的情况，往往进行一阶近似或者二阶近似就可以得到相当准确的结果。
+
+\section{Perturbation Theory without Time}
+我们先讨论哈密顿量中不显含时间的情况，对于哈密顿量$\op{H}_0$，有对应的本征态和本征值：
+\begin{equation}
+    \op{H}_0\ket{\psi_{im}}=E_i\ket{\psi_{im}}.
+\end{equation}
+$m$代表哈密顿量的本征态可能存在简并。
+
+假设总哈密顿量对应的本征态和本征值可以写为：
+\begin{equation}
+    \ket{\phi_{im}}=\ket{\phi_{im}^0}+\ket{\phi_{im}^1}+\ket{\phi_{im}^2}+\cdots.
+\end{equation}
+\begin{equation}
+    E=E^0+E^1+E^2+\cdots.
+\end{equation}
+
+借鉴线性代数中的系数对比方法，我们规定本征态中各阶项都是正交的，将其带入方程
+\begin{equation}
+    \left(\op{H}_0+\op{H}'\right)\ket{\phi_{im}}=E\ket{\phi_{im}}
+\end{equation}
+并对比不同阶的项可以得到：
+\begin{equation}
+    \label{Pertur_orders}
+    \begin{aligned}
+        \op{H}_0\ket{\phi^0}&=E^0\ket{\phi^0}\\
+        \op{H}_0\ket{\phi^1}+\op{H}'\ket{\phi^0}&=E^1\ket{\phi^0}+E^0\ket{\phi^1}\\
+        \op{H}_0\ket{\phi^2}+\op{H}'\ket{\phi^1}&=E^2\ket{\phi^0}+E^1\ket{\phi^1}+E^0\ket{\phi^2}\\
+        \cdots&=\cdots
+    \end{aligned}
+\end{equation}
+
+显然$\ket{\phi_0},E^0$是$\op{H}_0$的本征态和对应本征值，式\ref{Pertur_orders}中，各式左乘$\bra{\phi^0}$可以得到能阿玲本征值的高阶项：
+\begin{equation}
+    \begin{aligned}
+    E^1&=\bra{\phi^0}\op{H}'\ket{\phi^0}\\
+    E^2&=\bra{\phi^0}\op{H}'\ket{\phi^1}\\
+    \cdots&=\cdots
+    \end{aligned}
+\end{equation}
+
+左乘$\op{H}_0$的本征态$\ket{\psi_{im}}$可以得到：
+\begin{equation}
+    \begin{aligned}
+        (E_i-E^0)\braket{\psi_{im}}{\phi^1}&=-\bra{\psi_{im}}\op{H}'\ket{\phi^0}.\\
+        (E_i-E^0)\braket{\psi_{im}}{\phi^2}&=E^1\braket{\psi_{im}}{\phi^1}-\bra{\psi_{im}}\op{H}'\ket{\phi^1}.
+    \end{aligned}
+\end{equation}
+
+再通过
+\begin{equation}
+    \ket{\phi^l}=\sum_{im}\ket{\psi_{im}}\braket{\psi_{im}}{\phi^l}
+\end{equation}
+即可得到本征态的高阶近似。
+
+但是对于有简并的情况$E_i-E_0=0$,不能通过这种方法直接求解，也无法直接得到$\ket{\phi^0}$.一般地，将$\ket{\phi^0}$视为多个简并态的叠加：
+\begin{equation}
+    \ket{\phi^0}=\sum_{m}\ket{\psi_{im}}\braket{\psi_{im}}{\phi^0}.
+\end{equation}
+代入可以得到
+\begin{equation}
+    E^1\braket{\psi_{im}}{\phi^0}=\bra{\psi_{im}}\op{H}'\ket{\phi^0}.
+\end{equation}
+通常将其写成矩阵的形式：
+\begin{equation}
+    \sum_m\left(H'_{m'm}-E^1\delta_{m'm}\right)\braket{\psi_{im}}{\phi^0}=0
+\end{equation}
+等价于
+\begin{equation}
+    \det\left(H'-E^1I\right)=0.
+\end{equation}
+即$E^1$是$\op{H}'$在矩阵表象下的本征值。
+
+ 
