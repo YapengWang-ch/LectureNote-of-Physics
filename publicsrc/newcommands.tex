@@ -22,11 +22,13 @@
 \newcommand{\anticom}[2]{\left\lbrace#1,#2\right\rbrace}%反对易子
 \newcommand{\expect}[1]{\overline{#1}}%期望，上划线形式
 \newcommand{\expectket}[1]{\left<#1\right>}%算符的期望
+\newcommand{\amp}[1]{\left|#1\right|} % amplititude (for vector, complex number)
 \newcommand{\ampsq}[1]{\left|#1\right|^2}%幅值平方，复数平方
 \newcommand{\half}{\frac{1}{2}}
 \newcommand{\quat}{\frac{1}{4}}
 \newcommand{\si}[1]{\,\mathrm{#1}} %单位格式
 \newcommand{\der}{\mathrm{d}}				%导数符号
+\renewcommand{\d}{\der}
 \newcommand{\dd}[2]{\frac{\der #1}{\der #2}}
 \newcommand{\ddto}[2]{\frac{\der^2 #1}{\der #2^2}}
 \newcommand{\dx}[1]{\dd{#1}{x}}
@@ -36,12 +38,11 @@
 \newcommand{\ppto}[2]{\frac{\p^2 #1}{\p #2^2}}
 \newcommand{\px}[1]{\pp{#1}{x}}
 \newcommand{\pt}[1]{\pp{#1}{t}}
-\renewcommand{\d}{\der}
 \newcommand{\degree}{^\circ}
 
 \renewcommand{\max}{\text{max}}
 \renewcommand{\min}{\text{min}}
-
+\renewcommand{\vec}{\mathbf}
 \tcbuselibrary{skins, breakable}
 \definecolor{DarkGray}{RGB}{70,70,70}
 \definecolor{LightGray}{RGB}{240,240,240}
@@ -68,9 +69,15 @@
 \newenvironment{graybox}[1][Notation]{
     \settowidth{\DarkGrayWidth}{#1}
     % \needspace{3\baselineskip}
-    \begin{darkgraybox}[width=1.25\DarkGrayWidth+3em,after skip=0pt]#1\end{darkgraybox}
+    \ifdim\pagegoal=\maxdimen \else % 如果当前页有有限的高度
+        \ifdim\pagetotal>0.8\textheight % 如果当前页已经使用了80%的高度
+            \newpage
+        \fi
+    \fi
+    % \newpage
+    \begin{darkgraybox}[width=1.2\DarkGrayWidth+3em,after skip=0pt]#1\end{darkgraybox}
     % \vspace*{-3em}
     % \nopagebreak
-    % \vspace*{-0.1em}
+    \vspace*{1pt}
     \begin{lightgraybox}[before skip=0pt]
 }{\end{lightgraybox}}

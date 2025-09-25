@@ -1,0 +1,68 @@
+\documentclass[a4paper]{book}%article最高级标题为section，report为chapter
+%\textit{%package area
+\usepackage{graphicx}%插入图片
+\usepackage{titlesec}%修改标题格式
+\usepackage{amsmath}%大部分数学符号
+\usepackage{mathrsfs}%花体
+\usepackage{amssymb}%双线体mathbb
+\usepackage{xeCJK}%中文支持
+\usepackage{ctex} %中文字体
+\usepackage{geometry}%几何绘图
+\usepackage{setspace}%设置行距
+\usepackage{multicol}%表格合并
+\usepackage{multirow}%表格合并
+\usepackage{subfigure}%次级图片
+% \usepackage{hyperref}%调整标注与引用
+\usepackage{indentfirst}%首行缩进}
+\usepackage{tikz}%tikz绘图
+\usetikzlibrary{calc}
+\usepackage{listings}%代码插入
+% \lstset{language=Matlab}
+\usepackage{xcolor}
+\usepackage{tcolorbox} % 用于创建自定义文本框
+\usepackage[nottoc]{tocbibind} %目录中显示index,ref,glossary 等
+\usepackage{longtable}%大型表格跨页显示
+\usepackage{booktabs}
+%\usepackage{mathpazo} %
+\usepackage{pgfplots}
+
+\usepackage{imakeidx}
+\makeindex[columns=2, title=索引] 
+\usepackage[title]{appendix}
+% \renewcommand{\appendixname}{附录}
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref} % 关键设置
+% colorlinks=true 表示用颜色而非边框表示链接
+% linkcolor=blue 设置内部链接（如目录、章节引用）为蓝色
+% citecolor=blue 设置文献引用链接为蓝色
+% urlcolor=blue 设置URL链接为蓝色
+% hidelinks 用于去除链接周围的边框
+\usepackage{glossaries}
+\input{src/glossaries}
+\makeglossaries
+
+\usepackage{todonotes}
+\input{../../publicsrc/newcommands.tex}%自定义命令
+
+\begin{document}
+\title{Statistical Physics}
+\author{Wang Yapeng}
+
+\maketitle
+\frontmatter
+\include{src/preface}
+
+\mainmatter
+\tableofcontents
+\include{src/chapter1}
+\include{src/chapter2}
+% \include{src/chapter3}
+% \include{src/chapter4}
+
+\appendix
+\include{src/appendix}
+\printglossaries
+\addcontentsline{toc}{chapter}{Glossary}
+
+\backmatter 
+% \printindex
+\end{document}

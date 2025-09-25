@@ -79,5 +79,49 @@ $m$代表哈密顿量的本征态可能存在简并。
 即$E^1$是$\op{H}'$在矩阵表象下的本征值。
 
 \section{Scatterring Problem}
+粒子的对撞与打靶实验时粒子物理研究的重要途径，对撞与打靶中粒子的散射占据相当大的占比，因此对粒子散射的研究十分重要。
 
+假设入射粒子流为$\ket{\vec{p}}$, 经过另一个粒子形成的势场之后，部分粒子发生散射$$\int\d\Omega f(\theta,\phi)\ket{\vec{p}'}.$$
+由于$\phi$的各项同性，上式可简写为
+\begin{equation}
+    \int 2\pi\sin\theta\d\theta f(\theta)\ket{\vec{p}'}.
+\end{equation}
+
+对应的微分截面就是$\ampsq{f(\theta)}$,总截面为
+\begin{equation}
+    \sigma=2\pi\int_0^\pi\ampsq{f(\theta)}\sin\theta\d\theta.
+\end{equation}
+
+\subsection{Lippman-Schwinger Equation}
+求解散射问题，实际上就是求解薛定谔方程：
+\begin{equation}
+    \frac{\hbar^2}{2\mu}(\nabla^2+k^2)\psi(\vec{r})=V(\vec{r})\psi(\vec{r}).
+\end{equation}
+
+使用\gls{GreenFunction}$G(\vec{r},\vec{r}')$可以很方便地得到积分方程:
+
+\begin{equation}
+    \psi(\vec{r})=\frac{2\mu}{\hbar^2}\int\d^3\vec{r}'G(\vec{r},\vec{r}')V(\vec{r}')\psi(\vec{r}').
+\end{equation}
+这个方程就称为 \gls{LSEquation}。
+
+那么散射方程的解满足:
+\begin{equation}
+    \psi(\vec{r})=e^{i\vec{k}r}-\frac{\mu}{2\pi\hbar^2}\int\d^3\vec{r}'\frac{e^{ik\amp{\vec{r}-\vec{r}'}}}{\amp{\vec{r}-\vec{r}'}}V(\vec{r}')\psi(\vec{r}').
+\end{equation}
+
+\subsection{Born Approximation}
+如果把薛定谔方程的势场部分看作微扰，将入射粒子流$\ket{\vec{p}}$视为零级近似解，那么可以通过迭代法求\gls{LSEquation}的近似解,其一级近似为：
+\begin{equation}
+    \psi(\vec{r})=e^{i\vec{k}r}-\frac{\mu}{2\pi\hbar^2}\int\d^3\vec{r}'\frac{e^{ik\amp{\vec{r}-\vec{r}'}}}{\amp{\vec{r}-\vec{r}'}}V(\vec{r}')e^{i\vec{k}\cdot\vec{r}'}.
+\end{equation}
+
+进而可以得到散射振幅$f(\theta,\phi)$的一级近似
+\begin{equation}
+    f(\theta,\phi)=-\frac{\mu}{2\pi\hbar^2}\int\d^3\vec{r}'e^{-i\vec{q}\cdot\vec{r}'}V(\vec{r}').
+\end{equation}
+其中$\vec{q}=\vec{k}_f-\vec{k}$.对于中心势场$V(r)$,积分可以得到
+\begin{equation}
+    f(\theta)=-\frac{2\mu}{\hbar^2q}\int_0^{+\infty}r'V(r')\sin qr'\d r, \, q=2k\sin(\theta/2).
+\end{equation}
 

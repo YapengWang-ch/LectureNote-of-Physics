@@ -1,0 +1,176 @@
+\chapter{近独立粒子的最概然分布}
+\section{粒子状态的描述}
+假设粒子的自由度为$r$,经典力学告诉我们，粒子的运动状态由$r$个广义坐标$q$以及对应的广义动量$p$确定,粒子的能量是其广义坐标和广义动量的函数：
+\begin{equation}
+    \varepsilon=\varepsilon(\vec{q},\vec{p}).
+\end{equation}
+
+$\vec{p}$和$\vec{q}$张成一个$2r$维的线性空间，称为$\mu$空间，粒子任意时刻的状态为$\mu$空间中的一个点，运动轨迹为$\mu$空间中的一条线。
+
+在量子力学中，粒子状态由Hilbert空间中的矢量描述，实际应用中常用一组量子数描述。
+
+下面介绍几个简单例子：
+
+\paragraph{自由粒子}理想气体的分子和金属的自由电子可以视为自由粒子，有三个自由度：
+\begin{equation}
+    x,y,z,p_x=m\dot{x},p_y=m\dot{y},p_z=m\dot{z}.
+\end{equation}
+其能量就是粒子的动能
+\begin{equation}
+    \varepsilon=\frac{1}{2m}\left(p_x^2+p_y^2+p_z^2\right).
+\end{equation}
+
+\paragraph{一维谐振子} 一维谐振子只有一个自由度
+\begin{equation}
+    \varepsilon=\frac{p^2}{2m}+\half m\omega^2.
+\end{equation}
+其运动轨迹在$\mu$空间中为一个椭圆。
+
+\paragraph{转子} 转子只有两个自由度
+\begin{equation}
+    \varepsilon=\frac{1}{2I}\left(p_\theta^2+\frac{1}{\sin^2\theta}p_\varphi^2\right)
+\end{equation}
+
+在量子力学中转子的能量为
+\begin{equation}
+    \varepsilon=\frac{M^2}{2I}, M^2=l(l+1)\hbar^2, l=0,\pm1, \pm2, \cdots.
+\end{equation}
+\begin{equation}
+    M_z=m\hbar, m=-l,\cdots,l.
+\end{equation}
+
+
+\section{系统微观状态的描述}
+近独立粒子系统是指系统中粒子的相互作用很弱，相互作用势能远小于粒子动能，可以忽略粒子间的相互作用，比如理想气体。
+
+近独立粒子系统中系统的能量可以描述为单粒子能量的和：
+\begin{equation}
+    E=\sum_i^N \varepsilon_i.
+\end{equation}
+
+在经典力学的视角下，全同粒子是可分辨的，这样的系统称为\gls{Boltzman_sysm}，而在量子力学视角下，全同粒子是无法分辨的，按照组成粒子的不同分为玻色系统和费米系统。
+
+\begin{theorem}[等概率原理]
+    对于平衡状态的孤立系统，系统各个可能的微观状态出现的概率是相等的。
+\end{theorem}
+
+对于一个系统中的$N$个粒子，能级$\varepsilon_i$简并度为$\omega_i$,对应$a_i$个粒子，显然系统的总能量为
+\begin{equation}
+    E=\sum_l a_l\varepsilon_l.
+\end{equation}
+对于\gls{Boltzman_sysm}，系统的微观状态总数为
+\begin{equation}
+    \Omega_{M.B.}=\frac{N!}{\prod_l a_l!}\prod_l \omega_l^{a_l}.
+\end{equation}
+对于玻色系统
+\begin{equation}
+    \Omega_{B.E.}=\prod_l\frac{(\omega+a_l-1)!}{a_l!(\omega_l-1)!}.
+\end{equation}
+对于费米系统
+\begin{equation}
+    \Omega_{F.D.}=\prod_l\frac{\omega_l!}{a_l!(\omega_l-a_l)!}.
+\end{equation}
+
+当能级中的粒子数远小于该能级的简并度，即$a_l\ll \omega_l$时，后两者都可以近似为
+\begin{equation}
+    \Omega_{B.E.}\approx\frac{\Omega_{M.B.}}{N!},\quad \Omega_{F.D.}\approx\frac{\Omega_{M.B.}}{N!}.
+\end{equation}
+也就是说这两个系统的宏观特征与\gls{Boltzman_sysm}是一致的。
+
+\section{Boltzman Distribution}
+根据等概率原理，我们可以认为微观状态数最多的分布出现的概率是最大的，因此称为最概然分布。\gls{Boltzman_sysm}粒子的最概然分布就称为\gls{Boltzman_dist}。
+
+在接下来的讨论之前，我们先声明一个近似关系：
+\begin{equation}
+    \ln m!=m(\ln m-1), m\gg 1.
+\end{equation}
+
+\gls{Boltzman_sysm}的微观态总数为
+\begin{equation}
+    \Omega=\frac{N!}{\prod_l a_l!}\prod_l \omega_l^{a_l}.
+\end{equation}
+取对数可以得到：
+\begin{equation}
+    \ln\Omega=N(\ln N-1)-\sum_l a_l(\ln a_l-1)+\sum_l a_l\ln\omega_l.
+\end{equation}
+对$a_l$分别求导,可以得到微观态总数最多的条件：
+\begin{equation}
+    a_l=\omega_le^{-\alpha-\beta\varepsilon_l}.
+\end{equation}
+即处于某一状态的粒子数目与能级简并度成正比，与能级能量的指数成反比。参数$\alpha,\beta$可以通过以下等式计算得到：
+\begin{equation}
+    N=\sum_s e^{-\alpha-\beta\varepsilon_s}.
+\end{equation}
+\begin{equation}
+    E=\sum_s \varepsilon_s e^{-\alpha-\beta\varepsilon_s}.
+\end{equation}
+
+\section{Boltzman统计}
+\subsection{热力学量的统计表达}
+内能为粒子无规则运动总能量的统计平均：
+\begin{equation}
+    U=\sum_la_l\varepsilon_l=\sum_l\varepsilon_l\omega_l e^{-\alpha-\beta\varepsilon}.
+\end{equation}
+引入配分函数$Z_1$:
+\begin{equation}
+    Z_1=\sum_l\omega_le^{-\beta\varepsilon}.
+\end{equation}
+则有
+\begin{equation}
+    N=e^{-\alpha}Z_1.
+\end{equation}
+\begin{equation}
+    U=-N\pp{}{\beta}\ln Z_1.
+\end{equation}
+即为内能的统计表达式。
+
+压强为
+\begin{equation}
+    p=\frac{N}{\beta}\pp{}{V}\ln Z_1.
+\end{equation}
+
+熵定义为
+\begin{equation}
+    S=k\ln\Omega
+\end{equation}
+其中$k=\frac{1}{\beta T}=1.381\times 10^{-23}\mathrm{J\cdot K^{-1}}$,为玻尔兹曼常数。
+
+\section{理想气体状态方程}
+理想气体的配分函数为
+\begin{equation}
+    \begin{aligned}
+        Z_1& =\frac{1}{h^3}\iiint\d x\d y\d z \iiint e^{-\beta\frac{p_x^2+p_y^2+p_z^2}{2m}}\d p_x \d p_y \d p_z.\\
+        &=V\left(\frac{2\pi m}{h^2\beta}\right)^{3/2}.
+    \end{aligned}
+\end{equation}
+
+压强为
+\begin{equation}
+    p=\frac{N}{\beta}\pp{}{V}\ln Z_1=\frac{NkT}{V}.
+\end{equation}
+
+\subsection{麦克斯韦分布}
+通过玻尔兹曼分布可以得到分子速率的分布
+\begin{equation}
+    f(v)=A e^{-\frac{mv^2}{2kT}}.
+\end{equation}
+其中$A=n\left(\frac{m}{2\pi kT}\right)^{3/2}$为归一化常数。这个分布称为麦克斯韦分布。
+
+可以得到粒子的平均速率为\[\bar{v}=\sqrt{\frac{8kT}{\pi m}}\]
+平均动能为\[\half m\bar{v^2}=\frac{3}{2}kT.\]
+
+\subsection{能量均分定理}
+\begin{theorem}[能量均分定理]
+    对于温度为$T$的平衡状态的经典系统，粒子能量中每一个平方项的的平均值(每一个自由度的动能)等于$\half kT$.
+\end{theorem}
+
+利用能量均分定理，可以很方便地对系统能量进行求解。例如：
+\par 
+单原子分子的内能为\[U=\frac{3}{2}NkT.\]
+定容热容为\[C_v=\frac{3}{2}kT.\]
+定压热容为\[C_p=C_v+Nk=\frac{5}{2}kT.\]
+
+双原子分子有5个自由度，分子的内能为\[U=\frac{5}{2}NkT.\]
+定容热容为\[C_v=\frac{5}{2}kT.\]
+定压热容为\[C_p=C_v+Nk=\frac{7}{2}kT.\]
+

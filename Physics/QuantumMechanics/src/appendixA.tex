@@ -1,5 +1,19 @@
 \chapter{Mathematical Equations}
 \section{Hermitian ploynomial}
 \label{Hermition_Polynomial}
-\section{Sphere Harmonic Function}
+\section{Spherical Harmonic Function}
 \label{SphereHarmonic_Function}
+\section{Green Function}
+\label{Green_Function}
+
+形似
+\begin{equation}
+    (\nabla^2+k^2)f(x)=g(x)f(x)
+\end{equation}
+的微分方程称为Helmholtz方程。 Helmholtz方程在$g(x)=\delta(x-x')$时的解称为 \gls{GreenFunction}.
+
+三维的Green函数为
+\begin{equation}
+    G(\vec{r},\vec{r}')=-\frac{e^{ik\amp{\vec{r}-\vec{r}'}}}{4\pi\amp{\vec{r}-\vec{r}'}}.
+\end{equation}
+
