@@ -1,0 +1,31 @@
+\chapter{Ensemble Theory}
+最概然分布方法只适用于粒子间相互作用很弱的情形，如果需要研究的问题不能湖库额粒子间的相互作用，就要使用更普遍的理论-\gls{ensemble}理论.
+\section{Phase Space}
+经典理论中粒子的粒子状态由$2r$个物理量描述，可以视为$2r$维相空间中的一个点， 理论力学中的哈密顿正则方程为：
+\begin{equation}
+    \pp{q_i}{t}=\pp{H}{p_i},\pp{p_i}{t}=-\pp{H}{q_i}.
+\end{equation}
+
+\begin{theorem}[刘维尔定理]
+    如果随着一个代表点沿正则方程所确定的轨道在相空间中运动，那么其邻域的代表点密度为不随时间变化的常数。
+\end{theorem}
+刘维尔定理也可以表示为如下形式：
+\begin{equation}
+    \pp{\rho}{t}=-\sum_i\left[\pp{\rho}{q_i}\pp{H}{p_i}-\pp{\rho}{p_i}\pp{H}{q_i}\right]    
+\end{equation}
+
+
+\section{Micro-canonical Distribution}
+系统的整体状态可以视为微观粒子状态对相空间微元$\d\Omega$的积分：
+
+\begin{equation}
+    \int \rho(q,p,t)\d \Omega=1.
+\end{equation}
+对于宏观物理量$\bar{B}(t)$和对应的微观量$B(q,p)$,有：
+\begin{equation}
+    \bar{B}(t)=\int B(q,p)\rho(q,p,t)\d\Omega.
+\end{equation}
+
+假设有大量完全相同的系统，处于相同的宏观条件下，我们把这些大量系统的集合称为\gls{ensemble}.对应的$\bar{B}(t)$称为物理量$B$的\gls{ensemble_mean}。
+
+在给定的宏观条件下，系统可能的微观状态非常多，
