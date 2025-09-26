@@ -1,1 +1,79 @@
+\chapter{量子统计}
+\section{粒子的量子描述}
+\section{玻色分布和费米分布}
+对于玻色系统
+\begin{equation}
+    \Omega=\prod_l\frac{(\omega_l+a_l-1)}{a_l!(\omega-1)!}
+\end{equation}
+对应的最概然分布为：
+\begin{equation}
+    a_l=\frac{\omega_l}{e^{\alpha+\beta\varepsilon_l}-1}.
+\end{equation}
+称为玻色爱因斯坦分布。
+
+
+对于费米系统 
+\begin{equation}
+    \prod_l\frac{\omega_l!}{a_l!(\omega_l-a_l)!}
+\end{equation}
+对应的最该然分布为
+\begin{equation}
+    a_l=\frac{\omega_l}{e^{\alpha+\beta\varepsilon_l}+1}.
+\end{equation}
+称为费米狄拉克分布。
+
+当$a_l\ll \omega_l$时，二者都等价于玻尔兹曼分布，即经典情形。
+
+\section{玻色系统和费米系统中热力学量的表达式}
+\subsection{玻色系统}
+对于玻色系统，引入巨配分函数：
+\begin{equation}
+    \Xi=\prod_l\Xi_l=\prod_l\left(1-e^{-\alpha-\beta\varepsilon_l}\right)^{-\omega_l}.
+\end{equation}
+取对数为：
+\begin{equation}
+    \ln\Xi=-\sum_l\omega_l\ln(1-e^{-\alpha-\beta\varepsilon_l}).
+\end{equation}
+系统总粒子数为
+\begin{equation}
+    N=-\pp{}{\alpha}\ln\Xi.
+\end{equation}
+系统内能为：
+\begin{equation}
+    U=-\pp{}{\beta}\ln \Xi.
+\end{equation}
+压强为：
+\begin{equation}
+    p=\frac{1}{\beta}\pp{}{V}\ln\Xi.
+\end{equation}
+由于
+\begin{equation}
+    \d S=\frac{1}{T}\left(\d U-p\d V -\mu\d\bar{N}\right).
+\end{equation}
+可以得到
+\begin{equation}
+    \beta=\frac{1}{kT}, \alpha =-\frac{\mu}{kT}.
+\end{equation}
+积分可以得到：
+\begin{equation}
+    S=k\ln\Omega
+\end{equation}
+即玻尔兹曼关系。
+
+\subsection{费米系统}
+费米系统的巨配分函数为：
+\begin{equation}
+    \Xi=\prod_l\left(1+e^{-\alpha-\beta\varepsilon_l}\right)^{\omega_l}.
+\end{equation}
+其余与玻色系统类似。
+
+\section{量子系统的去经典化}
+在体积$V$内，能量范围$[\varepsilon,\varepsilon+\d \varepsilon]$内，分子可能为微观状态数目为：
+\begin{equation}
+D(\varepsilon)\d \varepsilon=g \frac{V}{4\pi^2\hbar^3\varepsilon}\left(2m\varepsilon\right)^{3/2}\d\varepsilon.    
+\end{equation}
+其中$g$为可能存在自旋而引入的简并度。
+
+\section{玻色爱因斯坦凝聚}
+\section{.}
 \chapter{系综理论}
