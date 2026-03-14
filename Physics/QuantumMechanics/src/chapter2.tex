@@ -227,7 +227,7 @@ $\forall \ket{x}, $有
     \com{a_-}{a_+}=1.
 \end{equation}
 
-容易证明，对于哈密顿量$\op{H}$的本征态$\psi$，$a_+\psi$也是$\op{H}$的本征态：
+容易证明，对于哈密顿量$\op{H}$的本征态$\psi$,$a_+\psi$也是$\op{H}$的本征态：
 
 \begin{graybox}[Proof]
     对于$\op{H}$和$a_+$:
@@ -301,6 +301,45 @@ $\forall \ket{x}, $有
 径向部分需要根据势能函数进行求解。
 
 \subsection{Coulomb Field of Hydrogen Atom}
+以氢原子为例，其势能函数为：
+
+\begin{equation}
+    V(r)=-\frac{e^2}{4\pi\varepsilon_0 r}.
+\end{equation}
+
+代入径向方程中：
+\begin{equation}
+    u''(r)+\left[\frac{2m}{\hbar^2}\left(E+\frac{e^2}{4\pi\varepsilon_0 r}\right)-\frac{l(l+1)}{r^2}\right]u(r)=0.
+\end{equation}
+引入无量纲量$\rho=\sqrt{-\frac{8mE}{\hbar^2}}r$, 可以将方程简化为：
+\begin{equation}
+    u''(\rho)+\left[-\frac{1}{4}+\frac{\eta}{\rho}-\frac{l(l+1)}{\rho^2}\right]u(\rho)=0, \quad \eta=\frac{me^2}{4\pi\varepsilon_0\hbar^2}\sqrt{-\frac{\hbar^2}{8mE}}.
+\end{equation}
+
+这个方程的解为\gls{Laguerre_Polynomial}(详见附录\ref{Laguerre_Polynomial}),其存在收敛解的条件为：
+
+\begin{equation}
+    \eta=n_r+l+1, \quad n_r=0,1,2,3,\cdots.
+\end{equation}
+
+因此可以得到氢原子能量的本征值为：
+\begin{equation}
+    E_n=-\frac{me^4}{32\pi^2\varepsilon_0^2\hbar^2}\frac{1}{n^2}, \quad n=n_r+l+1=1,2,3,\cdots.
+\end{equation}
+
+氢原子的基态能量为$E_1=-\frac{me^4}{32\pi^2\varepsilon_0^2\hbar^2}$, 其对应的波函数为：
+\begin{equation}
+    \psi_{100}(r,\theta,\phi)=\frac{1}{\sqrt{\pi a_0^3}}e^{-r/a_0}, \quad a_0=\frac{4\pi\varepsilon_0\hbar^2}{me^2}.
+\end{equation}
+其中$a_0$称为玻尔半径，氢原子能量的本征值可以写成：
+\begin{equation}
+    E_n=-\frac{\hbar^2}{2ma_0^2}\frac{1}{n^2}, \quad n=1,2,3,\cdots.
+\end{equation}
+
+第一激发态的能量为$E_2=-\frac{me^4}{128\pi^2\varepsilon_0^2\hbar^2}$, 其对应的波函数为：
+\begin{equation}
+    \psi_{200}(r,\theta,\phi)=\frac{1}{4\sqrt{2\pi a_0^3}}\left(2-\frac{r}{a_0}\right)e^{-r/2a_0}.
+\end{equation}
 \section{Hamiltonian with time term}
 \newpage 
 \section*{Problems}
