@@ -36,7 +36,6 @@
 \begin{enumerate}
     \item \begin{itemize}
       \item [a.]
-    对于时空坐标$x^\mu=(ct,x,y,z)$,
       \begin{equation}
         \begin{aligned}
           &S^\mathtt{T}(\alpha,\beta) \Lambda S(\alpha,\beta)\\
@@ -108,5 +107,51 @@
       因此不存在非零洛伦兹矢量同时满足这三个条件。
     \end{itemize}
 
+  \item \begin{itemize}
+    \item [a.]
+根据Euler Lagrange equations，
+  \begin{equation}
+    \frac{\partial \mathcal{L}}{\partial \psi}-\partial_\nu\left(\frac{\partial \mathcal{L}}{\partial(\partial_\nu \psi)}\right)=0,
+  \end{equation}
+  代入可得
+  \begin{equation}
+    \gamma^\mu\partial_\mu \psi-m_1\psi+e\gamma^\mu A_\mu\psi=0,
+  \end{equation}
+  \begin{equation}
+    \gamma^\mu\partial_\mu \chi-m_2\chi+e\gamma^\mu A_\mu\chi=0.    
+  \end{equation}
+  对current进行微分
+  \begin{equation}
+    \begin{aligned}
+      \partial_\mu j^\mu&=\partial_\mu\left(\bar{\psi}\gamma^\mu\chi\right)+\partial_\mu\left(\bar{\chi}\gamma^\mu\psi\right)\\
+      &=\left(\partial_\mu \bar{\psi}\right)\gamma^\mu\chi+\bar{\psi}\gamma^\mu\left(\partial_\mu \chi\right)+\left(\partial_\mu \bar{\chi}\right)\gamma^\mu\psi+\bar{\chi}\gamma^\mu\left(\partial_\mu \psi\right)\\
+      &=(m_1-m_2)\left(\bar\chi\psi+\bar\psi\chi\right)\\
+    \end{aligned}
+  \end{equation}
+  显然，当$m_1=m_2$时，$\partial_\mu j^\mu=0$,即current守恒。
+  \item [b.]同上，当$m_1\neq m_2$时，$\partial_\mu j^\mu\ne 0$,即current不守恒。
+  \item [c.]真空极化张量为
+  \begin{equation}
+    \Pi^{\mu\nu}(q)\sim \int \frac{d^4k}{(2\pi)^4}\mathrm{Tr}\left[\gamma^\mu\frac{i}{{k}-m_1}\gamma^\nu\frac{i}{{k}+{q}-m_2}\right].
+  \end{equation}
+  当$m_1\ne m_2$时，$\Pi^{\mu\nu}(q)$不满足$q_\mu \Pi^{\mu\nu}(q)=0$，因此必然要添加$A_\mu$的质量项。
+  \end{itemize}
+
+  \item 
+  在变换$A_\mu\to UA_\mu U^{-1}-\frac{i}{g}\left(\partial_\mu U\right)U^{-1}$下,
+  \begin{equation}
+    \partial_\mu A_\nu \to \partial_\mu\left(UA_\mu U^{-1}\right) + \frac{i}{g}\partial_\mu \left[\left(\partial_\nu U\right)U^{-1}\right]
+  \end{equation}
+  \begin{equation}
+    \left[A_\mu, A_\nu\right]=U\left[A_\mu, A_\nu\right]U^{-1}-\frac{1}{g}\left[(\partial_\nu U)(\partial_\mu U^{-1})-(\partial_\mu U)(\partial_\nu U^{-1})\right]
+  \end{equation}
+  计算可得
+  \begin{equation}
+    F_{\mu\nu} \to U F_{\mu\nu} U^{-1}.
+  \end{equation}
+  因此
+  \begin{equation}
+    \mathcal{L}'=-\frac{1}{2}\mathrm{Tr}F'_{\mu\nu}F'^{\mu\nu}=-\frac{1}{2}\mathrm{Tr}UF_{\mu\nu}F^{\mu\nu}U^{-1}=\mathcal{L}.
+  \end{equation}
 \end{enumerate}
 \end{document}
