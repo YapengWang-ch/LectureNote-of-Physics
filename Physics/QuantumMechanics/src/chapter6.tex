@@ -1,0 +1,59 @@
+\chapter{Quantum Field Theory}
+
+\section{狭义相对论}
+在相对论中，时间与空间都是相对的。对于两个相对速度$\beta\hat{x}$的参考系，参考系中事件时空坐标变换满足形式：
+\begin{equation}
+    \begin{pmatrix}
+        ct' \\ x' \\ y' \\ z' 
+    \end{pmatrix}=
+    \begin{pmatrix}
+        \gamma & -\gamma\beta &&\\
+        -\gamma\beta & \gamma &&\\
+        &&1&\\
+        &&&1
+    \end{pmatrix}
+    \begin{pmatrix}
+        ct \\ x \\ y \\ z
+    \end{pmatrix}
+\end{equation}
+如果四矢量$P$与$(ct,x,y,z)$的变换形式一致，则称该四矢量为\textbf{逆变}的，记作$P^\mu$, 同样的，时空坐标$(ct,x,y,z)$记作$x^\mu$.
+
+易证，逆变四矢量$P^\mu=(p_0,p_1,p_2,p_3)$通过以下计算得到的物理量不随坐标系变化：
+\begin{equation}
+    -p_0^2+p_1^2+p_2^2+p_3^2.
+\end{equation}
+称该物理量为洛伦兹变换不变的。例如$c^2t^2-x^2-y^2-z^2$.
+
+为了形式更优雅，我们定义Minkowski度规
+\begin{equation}
+    g_{\mu\nu}=\begin{pmatrix}
+        -1 &&&\\
+        &1 &&\\
+        &&1&\\
+        &&&1
+    \end{pmatrix}.
+\end{equation}
+将上式的形式写成
+\begin{equation}
+    x^\mu g_{\mu\nu} x^\nu = Constant.
+\end{equation}
+
+同时还可以将$g_{\mu\nu} x^\nu$记作$x_\mu=(-ct, x, y, z)$, 称为$x^\mu$协变形式。上式可以更简单地记作
+\begin{equation}
+    x^\mu x_\mu=Constant.
+\end{equation}
+
+进一步定义$g_{\mu\nu}$的逆$g^{\mu\nu}$, 显然，其形式与$g_{\mu\nu}$是完全一致的
+\begin{equation}
+        g^{\mu\nu}=\begin{pmatrix}
+        -1 &&&\\
+        &1 &&\\
+        &&1&\\
+        &&&1
+    \end{pmatrix}, \quad g^{\mu\nu}x_\nu= x^\mu.
+\end{equation}
+
+这样我们就可以将前文中的洛伦兹变换写成以下形式
+\begin{equation}
+    \bar{x}^\mu=\Lambda_\nu^\mu x^\nu + a^\mu.
+\end{equation}
