@@ -57,3 +57,34 @@
 \begin{equation}
     \bar{x}^\mu=\Lambda_\nu^\mu x^\nu + a^\mu.
 \end{equation}
+\begin{equation}
+    \Lambda_\nu^\mu=\begin{pmatrix}
+        \gamma & -\gamma\beta && \\
+        -\gamma\beta & \gamma && \\
+        &&1&\\
+        &&&1
+    \end{pmatrix}
+\end{equation}
+
+
+\section{Classical Field Theory}
+在经典力学中，场用$\phi(x)$描述,其拉氏量表示为$\phi$和$\partial_\mu\phi$的函数：
+\begin{equation}
+    \mathcal{L}(\phi,\partial_\mu\phi).
+\end{equation} 
+根据最小作用量原理，
+\begin{equation}
+    \begin{aligned}
+        0&=\delta\int \mathcal{L}\,\d^4 x\\
+        &=\int\d^4 x\left[\pp{\mathcal{L}}{\phi}\delta\phi+\pp{\mathcal{L}}{(\partial_\mu\phi)}\delta(\partial_\mu\phi)\right]\\
+    \end{aligned}
+\end{equation}
+可以得到：
+\begin{equation}
+    \partial_\mu\left(\pp{\mathcal{L}}{(\partial_\mu\phi)}\right)-\pp{\mathcal{L}}{\phi}=0
+\end{equation}
+
+如果写成哈密顿量$H=\sum p\dot{q}-L$的形式
+\begin{equation}
+    p(x)=\pp{\mathcal{L}}{\dot{\phi}(x)}.
+\end{equation}
